@@ -27,6 +27,7 @@ void task_Update_LEDs(void);
 
 //Animation function prototypes
 void white(void);
+void red(void);
 void christmas(void);
 void rainbow(void);
 void rainbowWithGlitter(void);

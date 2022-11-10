@@ -24,6 +24,12 @@ void white(){
   }
 }
 
+void red(){
+  for(int i = 0; i < NUM_LEDS; i++){
+    leds[i] = CRGB::Red;
+  }
+}
+
 void christmas(){
   for(int i = 0; i < NUM_LEDS; i++){
     if(i%2){
