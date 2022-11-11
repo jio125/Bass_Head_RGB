@@ -10,7 +10,7 @@
 #define MIN_BRIGHTNESS  32
 #define MAX_BRIGHTNESS  128
 #define FRAMES_PER_SECOND 120
-#define NUM_PATTERNS  8
+#define NUM_PATTERNS  9
 
 #define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0])) //find the size of an array
 
