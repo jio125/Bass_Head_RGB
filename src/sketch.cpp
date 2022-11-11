@@ -18,6 +18,11 @@ int main(){
   RTCS_Add_Task(task_Read_Analog, 1, 50);
   RTCS_Enable_Task(task_Read_Analog, 1);
 
+  //Add task to debounce switch
+  //Task is disabled to start
+  RTCS_Add_Task(task_Debounce, 2, 2);
+  RTCS_Enable_Task(task_Debounce, 0);
+
   //Hand off control to scheduler
   RTCS_Run_Scheduler();
 
