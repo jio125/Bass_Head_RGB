@@ -12,7 +12,7 @@ void initLEDs(void){
 }
 
 void task_Update_LEDs(void){
-  static PatternList gPatterns = {white, red, christmas, rainbow, rainbowWithGlitter, confetti, sinelon, juggle, bpm };
+  static PatternList gPatterns = {white, red, fillRandom, christmas, rainbow, rainbowWithGlitter, confetti, sinelon, juggle, bpm };
 
   gPatterns[gCurrentPatternNumber]();
   FastLED.show();
@@ -30,16 +30,50 @@ void red(){
   }
 }
 
+CRGB randColor(void){
+  CRGB color;
+  color.r = random8(128);
+  color.g = random8(128);
+  color.b = random8(128);
+  return color;
+}
+
+void fillRandom(void){
+  static int count = 0;
+  count++;
+  if(count > 25){
+    for(int i = 0; i < NUM_LEDS; i++){
+      leds[i] = randColor();
+    }
+    count = 0;
+  }
+}
+
 void christmas(){
+  static bool startRed = true;
+  static int count = 0;
   for(int i = 0; i < NUM_LEDS; i++){
-    if(i%2){
-      if(leds[i] == CRGB(255,0,0)) leds[i] = CRGB::Green;
-      else leds[i] = CRGB::Red;
+    if(startRed){
+      if(i%2){
+        leds[i] = CRGB::Red;
+      }
+      else{
+        leds[i] = CRGB::Green;
+      }
     }
     else{
-      if(leds[i] == CRGB(0,255,0)) leds[i] = CRGB::Red;
-      else leds[i] = CRGB::Green;
+      if(i%2){
+        leds[i] = CRGB::Green;
+      }
+      else{
+        leds[i] = CRGB::Red;
+      }
     }
+  }
+  count++;
+  if(count == 25){
+    count = 0;
+    startRed = !startRed;
   }
 }
 

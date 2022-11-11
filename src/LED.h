@@ -10,7 +10,7 @@
 #define MIN_BRIGHTNESS  32
 #define MAX_BRIGHTNESS  128
 #define FRAMES_PER_SECOND 120
-#define NUM_PATTERNS  9
+#define NUM_PATTERNS  10
 
 #define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0])) //find the size of an array
 
@@ -28,6 +28,7 @@ void task_Update_LEDs(void);
 //Animation function prototypes
 void white(void);
 void red(void);
+void fillRandom(void);
 void christmas(void);
 void rainbow(void);
 void rainbowWithGlitter(void);

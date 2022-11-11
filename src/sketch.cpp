@@ -20,7 +20,7 @@ int main(){
 
   //Add task to debounce switch
   //Task is disabled to start
-  RTCS_Add_Task(task_Debounce, 2, 2);
+  RTCS_Add_Task(task_Debounce, 2, 25);
   RTCS_Enable_Task(task_Debounce, 0);
 
   //Hand off control to scheduler
