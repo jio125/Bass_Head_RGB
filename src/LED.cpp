@@ -12,7 +12,7 @@ void initLEDs(void){
 }
 
 void task_Update_LEDs(void){
-  static PatternList gPatterns = {white, christmas, rainbow, rainbowWithGlitter, confetti, sinelon, juggle, bpm };
+  static PatternList gPatterns = {white, red, christmas, rainbow, rainbowWithGlitter, confetti, sinelon, juggle, bpm };
 
   gPatterns[gCurrentPatternNumber]();
   FastLED.show();
