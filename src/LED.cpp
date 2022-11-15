@@ -12,7 +12,7 @@ void initLEDs(void){
 }
 
 void task_Update_LEDs(void){
-  static PatternList gPatterns = {white, red, fillRandom, christmas, rainbow, rainbowWithGlitter, confetti, sinelon, juggle, bpm };
+  static PatternList gPatterns = {white, red, fillRandom, christmas, rainbow};
 
   gPatterns[gCurrentPatternNumber]();
   FastLED.show();
@@ -84,6 +84,7 @@ void rainbow()
   gHue += 7;
 }
 
+/*
 void rainbowWithGlitter() 
 {
   // built-in FastLED rainbow, plus some random sparkly glitter
@@ -134,3 +135,4 @@ void juggle() {
     dothue += 32;
   }
 }
+*/

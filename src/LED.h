@@ -6,11 +6,11 @@
 #define DATA_PIN  3
 #define LED_TYPE  WS2811
 #define COLOR_ORDER GRB
-#define NUM_LEDS  150
+#define NUM_LEDS  100
 #define MIN_BRIGHTNESS  32
 #define MAX_BRIGHTNESS  128
 #define FRAMES_PER_SECOND 120
-#define NUM_PATTERNS  10
+#define NUM_PATTERNS  5
 
 #define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0])) //find the size of an array
 
