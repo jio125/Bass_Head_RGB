@@ -3,7 +3,7 @@
 
 void Init_Timer(uint32_t freq){
   TCCR1 |= (1<<CTC1);
-  OCR0A = (OCR_BASE * (1/freq)) - 1;
+  OCR1A = (OCR_BASE * (1/freq)) - 1;
   TIMSK |= (1<<OCIE1A);
   sei();
   TCCR1 |= (1<<CS12);
