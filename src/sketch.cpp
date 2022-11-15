@@ -1,7 +1,9 @@
 
 #include "sketch.h"
 
-
+extern "C"{
+  volatile unsigned long timer0_millis = 0; //Force define to allow compilation
+}
 
 int main(){
   init(); //system initialization
